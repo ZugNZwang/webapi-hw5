@@ -24,6 +24,7 @@ class Movie extends Component {
             );
         };
 
+        /*
         const ReviewInfo = ({reviews}) => {
             return reviews.map((review, i) =>
                 <p key={i}>
@@ -31,7 +32,7 @@ class Movie extends Component {
                     <Glyphicon glyph={'star'} /> {review.rating}
                 </p>
             );
-        }
+        }*/
 
         const DetailInfo = ({currentMovie}) => {
             if (!currentMovie) { // evaluates to true if currentMovie is null
@@ -43,10 +44,11 @@ class Movie extends Component {
                     <Panel.Body><Image className="image" src={currentMovie.image} thumbnail /></Panel.Body>
                     <ListGroup>
                         <ListGroupItem>{currentMovie.title}</ListGroupItem>
+                        <ListGroupItem>{currentMovie.genre}</ListGroupItem>
+                        <ListGroupItem>{currentMovie.year}</ListGroupItem>
                         <ListGroupItem><ActorInfo actors={currentMovie.actors} /></ListGroupItem>
                         <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.avgRating} </h4></ListGroupItem>
                     </ListGroup>
-                    <Panel.Body><ReviewInfo reviews={currentMovie.reviews} /></Panel.Body>
                 </Panel>
             );
         };
